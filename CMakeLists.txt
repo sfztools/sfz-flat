@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.13)
+project(sfz-flat)
+add_subdirectory(sfizz EXCLUDE_FROM_ALL)
+add_executable(sfz-flat sfz-flat.cpp)
+target_link_libraries(sfz-flat sfizz::parser absl::flags_parse)
