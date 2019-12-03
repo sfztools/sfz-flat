@@ -30,11 +30,6 @@
 
 class PrintingParser: public sfz::Parser
 {
-public:
-    int getNumRegions() const noexcept { return numRegions; }
-    int getNumGroups() const noexcept { return numGroups; }
-    int getNumMasters() const noexcept { return numMasters; }
-    int getNumCurves() const noexcept { return numCurves; }
 protected:
     void callback(absl::string_view header, const std::vector<sfz::Opcode>& members) final
     {
@@ -68,10 +63,6 @@ protected:
         }
     }
 private:
-    int numRegions { 0 };
-    int numGroups { 0 };
-    int numMasters { 0 };
-    int numCurves { 0 };
     std::vector<sfz::Opcode> globalMembers;
     std::vector<sfz::Opcode> masterMembers;
     std::vector<sfz::Opcode> groupMembers;
